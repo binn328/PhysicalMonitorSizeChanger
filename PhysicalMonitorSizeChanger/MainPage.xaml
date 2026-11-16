@@ -14,6 +14,70 @@
             <TextBlock Text="모니터의 물리적 크기를 변경합니다."
                        Foreground="{ThemeResource TextFillColorSecondaryBrush}"
                        TextWrapping="Wrap"/>
+            <Border Padding="16"
+                    Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                    BorderBrush="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                    BorderThickness="1"
+                    CornerRadius="8">
+                <StackPanel Spacing="10">
+                    <TextBlock Text="대상 디스플레이" FontWeight="SemiBold"/>
+                    <StackPanel Orientation="Horizontal" Spacing="8">
+                        <ComboBox x:Name="MonitorCombo"
+                                  Width="300"
+                                  DisplayMemberPath="DisplayLabel"
+                                  SelectionChanged="OnMonitorChanged"/>
+                        <Button Content="새로고침"
+                                Click="OnRefreshClick"/>
+                    </StackPanel>
+                    <TextBlock x:Name="CurrentInfoText"
+                               Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                               Text="모니터 정보를 불러오는 중..."/>
+                </StackPanel>
+            </Border>
+            <Border Padding="16"
+                    Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                    BorderBrush="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                    BorderThickness="1"
+                    CornerRadius="8">
+                <StackPanel Spacing="12">
+                    <TextBlock Text="목표 화면 크기" FontWeight="SemiBold"/>
+                    <StackPanel Orientation="Horizontal"
+                                Spacing="8">
+                        <Button Content="8인치" Tag="8" Click="OnPresetClick"/>
+                        <Button Content="11인치" Tag="11" Click="OnPresetClick"/>
+                        <Button Content="12인치" Tag="12" Click="OnPresetClick"/>
+                        <Button Content="13인치" Tag="13" Click="OnPresetClick"/>
+                    </StackPanel>
+                    <NumberBox x:Name="TargetInchesBox"
+                               Width="150"
+                               HorizontalAlignment="Left"
+                               Header="커스텀(5 ~ 60)"
+                               Minimum="5"
+                               Maximum="60"
+                               SmallChange="0.5"
+                               SpinButtonPlacementMode="Inline"
+                               Value="13"
+                               ValueChanged="OnTargetInchesChanged"/>
+                    <TextBlock x:Name="PreviewText"
+                               Foreground="{ThemeResource AccentTextFillColorPrimaryBrush}"
+                               FontWeight="SemiBold"
+                               Text="미리보기"/>
+                </StackPanel>
+            </Border>
+            <StackPanel Orientation="Horizontal"
+                        Spacing="10">
+                <Button x:Name="ApplyButton"
+                        Content="적용(관리자권한 필요)"
+                        Style="{StaticResource AccentButtonStyle}"
+                        Click="OnApplyClick"/>
+                <Button x:Name="RestoreButton"
+                        Content="되돌리기"
+                        Style="{StaticResource AccentButtonStyle}"
+                        Click="OnRestoreClick"/>
+            </StackPanel>
+            <InfoBar x:Name="StatusInfoBar"
+                     IsOpen="False"
+                     IsClosable="True"/>
         </StackPanel>
     </ScrollViewer>
 </Page>

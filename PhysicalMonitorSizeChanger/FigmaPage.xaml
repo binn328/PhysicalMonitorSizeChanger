@@ -1,0 +1,152 @@
+<Page xmlns:uen="using:Uno.Extensions.Navigation.UI" xmlns:uer="using:Uno.Extensions.Reactive.UI" xmlns:utu="using:Uno.Toolkit.UI" xmlns:utum="using:Uno.Toolkit.UI.Material" xmlns:muxc="using:Microsoft.UI.Xaml.Controls" xmlns:um="using:Uno.Material" xmlns:ut="using:Uno.Themes" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:local="using:Windows.UI.Kit.Community" x:Class="Windows.UI.Kit.Community.디스플레이_물리적_크기_변경_프로그램" mc:Ignorable="d" Background="{ThemeResource Base}" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+    <utu:AutoLayout Background="{ThemeResource Base}" CornerRadius="8" CounterAxisAlignment="Start">
+        <utu:AutoLayout CounterAxisAlignment="Start" utu:AutoLayout.IsIndependentLayout="True" VerticalAlignment="Top" HorizontalAlignment="Left" Width="1040">
+            <TextBlock Text="▣" utu:AutoLayout.IsIndependentLayout="True" Margin="16,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="{ThemeResource Primary}" />
+            <TextBlock Text="디스플레이 물리적 크기 변경 프로그램" utu:AutoLayout.IsIndependentLayout="True" Margin="42,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="{ThemeResource Primary}" />
+            <TextBlock Text="—" utu:AutoLayout.IsIndependentLayout="True" Margin="919,8,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="{ThemeResource Primary}" />
+            <TextBlock Text="□" utu:AutoLayout.IsIndependentLayout="True" Margin="964,8,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="{ThemeResource Primary}" />
+            <TextBlock Text="×" utu:AutoLayout.IsIndependentLayout="True" Margin="1008,8,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="{ThemeResource Primary}" />
+        </utu:AutoLayout>
+        <utu:AutoLayout CounterAxisAlignment="Start" utu:AutoLayout.IsIndependentLayout="True" Margin="32,64,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="976">
+            <TextBlock Text="디스플레이 물리적 크기 변경 프로그램" utu:AutoLayout.IsIndependentLayout="True" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="{ThemeResource Primary}" />
+            <TextBlock Text="디스플레이의 대각선 크기를 지정하고, 계산된 물리적 크기를 적용하세요." utu:AutoLayout.IsIndependentLayout="True" Margin="0,44,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="{ThemeResource Secondary}" />
+        </utu:AutoLayout>
+        <utu:AutoLayout CounterAxisAlignment="Start" utu:AutoLayout.IsIndependentLayout="True" Margin="32,153,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="976">
+            <TextBlock Text="활성 디스플레이" utu:AutoLayout.IsIndependentLayout="True" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="{ThemeResource Primary}" />
+            <TextBlock Text="2개 감지됨" utu:AutoLayout.IsIndependentLayout="True" Margin="112,1,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="{ThemeResource Secondary}" />
+            <utu:AutoLayout CornerRadius="4" CounterAxisAlignment="Start" Padding="1" utu:AutoLayout.IsIndependentLayout="True" Margin="0,30,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="820">
+                <utu:AutoLayout Background="{ThemeResource Default}" CornerRadius="3" CounterAxisAlignment="Center" Justify="SpaceBetween" Orientation="Horizontal" Padding="11,4" utu:AutoLayout.CounterAlignment="Stretch">
+                    <utu:AutoLayout PrimaryAxisAlignment="Center" CounterAxisAlignment="Start" Padding="0,0,0,2">
+                        <TextBlock Text="디스플레이 1  ·  DELL U2724D  (주 디스플레이)" Foreground="{ThemeResource Primary}" />
+                        <Line X2="80" Width="80" />
+                    </utu:AutoLayout>
+                    <TextBlock TextAlignment="Center" Text="" Margin="2" Foreground="{ThemeResource Secondary}" />
+                </utu:AutoLayout>
+            </utu:AutoLayout>
+            <utu:AutoLayout CornerRadius="4" PrimaryAxisAlignment="Center" CounterAxisAlignment="Center" Padding="1" utu:AutoLayout.IsIndependentLayout="True" Margin="836,30,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="140" Height="32">
+                <utu:AutoLayout Background="{ThemeResource Default}" CornerRadius="3" PrimaryAxisAlignment="Center" CounterAxisAlignment="Center" Padding="11,4,11,6" utu:AutoLayout.CounterAlignment="Stretch" utu:AutoLayout.PrimaryAlignment="Stretch">
+                    <Line X2="96" Width="96" />
+                    <TextBlock TextAlignment="Center" Text="새로고침" Foreground="{ThemeResource Primary}" />
+                </utu:AutoLayout>
+            </utu:AutoLayout>
+        </utu:AutoLayout>
+        <utu:AutoLayout CounterAxisAlignment="Start" utu:AutoLayout.IsIndependentLayout="True" Margin="32,245,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="388">
+            <utu:AutoLayout CounterAxisAlignment="Start" utu:AutoLayout.IsIndependentLayout="True" VerticalAlignment="Top" HorizontalAlignment="Left" Width="388">
+                <Rectangle RadiusX="7" RadiusY="7" Fill="{ThemeResource Quinary}" utu:AutoLayout.IsIndependentLayout="True" Margin="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+                <Rectangle RadiusX="7" RadiusY="7" utu:AutoLayout.IsIndependentLayout="True" Margin="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+                <Rectangle RadiusX="7" RadiusY="7" utu:AutoLayout.IsIndependentLayout="True" Margin="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+            </utu:AutoLayout>
+            <TextBlock Text="현재 디스플레이" utu:AutoLayout.IsIndependentLayout="True" Margin="24,22,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="{ThemeResource Primary}" />
+            <Rectangle RadiusX="4" RadiusY="4" Fill="{ThemeResource Base}" utu:AutoLayout.IsIndependentLayout="True" Margin="304,26,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="60" Height="24" />
+            <TextBlock Text="초기값" utu:AutoLayout.IsIndependentLayout="True" Margin="317,28,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="{ThemeResource Secondary}" />
+            <Rectangle RadiusX="5" RadiusY="5" Fill="{ThemeResource Secondary}" utu:AutoLayout.IsIndependentLayout="True" Margin="117,77,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="154" Height="94" />
+            <Rectangle RadiusX="2" RadiusY="2" Fill="{ThemeResource Base}" utu:AutoLayout.IsIndependentLayout="True" Margin="121,81,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="146" Height="82" />
+            <TextBlock Text="1" utu:AutoLayout.IsIndependentLayout="True" Margin="186,99,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="{ThemeResource Primary}" />
+            <Rectangle RadiusX="1" RadiusY="1" Fill="{ThemeResource Secondary}" utu:AutoLayout.IsIndependentLayout="True" Margin="188,171,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="12" Height="10" />
+            <Rectangle RadiusX="1" RadiusY="1" Fill="{ThemeResource Secondary}" utu:AutoLayout.IsIndependentLayout="True" Margin="173,180,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="42" Height="3" />
+            <TextBlock Text="DELL U2724D" utu:AutoLayout.IsIndependentLayout="True" Margin="24,205,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="{ThemeResource Primary}" />
+            <TextBlock Text="크기 (인치)" utu:AutoLayout.IsIndependentLayout="True" Margin="24,238,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="{ThemeResource Secondary}" />
+            <TextBlock Text="27.2인치" utu:AutoLayout.IsIndependentLayout="True" Margin="24,258,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="{ThemeResource Primary}" />
+            <TextBlock Text="60cm × 34cm" utu:AutoLayout.IsIndependentLayout="True" Margin="190,273,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="{ThemeResource Secondary}" />
+            <Rectangle Fill="{ThemeResource Default}" utu:AutoLayout.IsIndependentLayout="True" Margin="24,313,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="340" Height="1" />
+            <TextBlock Text="해상도" utu:AutoLayout.IsIndependentLayout="True" Margin="24,332,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="{ThemeResource Secondary}" />
+            <TextBlock Text="1440 × 1080 px" utu:AutoLayout.IsIndependentLayout="True" Margin="224,332,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="{ThemeResource Primary}" />
+            <TextBlock Text="해상도 비율" utu:AutoLayout.IsIndependentLayout="True" Margin="24,367,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="{ThemeResource Secondary}" />
+            <TextBlock Text="4:3  (1.33:1)" utu:AutoLayout.IsIndependentLayout="True" Margin="243,367,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="{ThemeResource Primary}" />
+        </utu:AutoLayout>
+        <utu:AutoLayout CounterAxisAlignment="Start" utu:AutoLayout.IsIndependentLayout="True" Margin="440,245,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="568">
+            <utu:AutoLayout CounterAxisAlignment="Start" utu:AutoLayout.IsIndependentLayout="True" VerticalAlignment="Top" HorizontalAlignment="Left" Width="568">
+                <Rectangle RadiusX="7" RadiusY="7" Fill="{ThemeResource Quinary}" utu:AutoLayout.IsIndependentLayout="True" Margin="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+                <Rectangle RadiusX="7" RadiusY="7" utu:AutoLayout.IsIndependentLayout="True" Margin="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+                <Rectangle RadiusX="7" RadiusY="7" utu:AutoLayout.IsIndependentLayout="True" Margin="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+            </utu:AutoLayout>
+            <TextBlock Text="적용할 디스플레이 크기" utu:AutoLayout.IsIndependentLayout="True" Margin="24,22,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="{ThemeResource Primary}" />
+            <TextBlock Text="프리셋" utu:AutoLayout.IsIndependentLayout="True" Margin="24,65,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="{ThemeResource Primary}" />
+            <utu:AutoLayout CornerRadius="4" CounterAxisAlignment="Start" Padding="1" utu:AutoLayout.IsIndependentLayout="True" Margin="24,94,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="80">
+                <utu:AutoLayout Background="{ThemeResource Default}" CornerRadius="3" CounterAxisAlignment="Center" Padding="11,4,11,6" utu:AutoLayout.CounterAlignment="Stretch">
+                    <Line X2="96" Width="96" />
+                    <TextBlock TextAlignment="Center" Text="8인치" Foreground="{ThemeResource Primary}" />
+                </utu:AutoLayout>
+            </utu:AutoLayout>
+            <utu:AutoLayout CornerRadius="4" CounterAxisAlignment="Start" Padding="1" utu:AutoLayout.IsIndependentLayout="True" Margin="112,94,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="80">
+                <utu:AutoLayout Background="{ThemeResource Default}" CornerRadius="3" CounterAxisAlignment="Center" Padding="11,4,11,6" utu:AutoLayout.CounterAlignment="Stretch">
+                    <Line X2="96" Width="96" />
+                    <TextBlock TextAlignment="Center" Text="9인치" Foreground="{ThemeResource Primary}" />
+                </utu:AutoLayout>
+            </utu:AutoLayout>
+            <utu:AutoLayout CornerRadius="4" CounterAxisAlignment="Start" Padding="1" utu:AutoLayout.IsIndependentLayout="True" Margin="200,94,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="80">
+                <utu:AutoLayout Background="{ThemeResource Default}" CornerRadius="3" CounterAxisAlignment="Center" Padding="11,4,11,6" utu:AutoLayout.CounterAlignment="Stretch">
+                    <Line X2="96" Width="96" />
+                    <TextBlock TextAlignment="Center" Text="10인치" Foreground="{ThemeResource Primary}" />
+                </utu:AutoLayout>
+            </utu:AutoLayout>
+            <utu:AutoLayout CornerRadius="4" CounterAxisAlignment="Start" Padding="1" utu:AutoLayout.IsIndependentLayout="True" Margin="288,94,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="80">
+                <utu:AutoLayout Background="{ThemeResource Default}" CornerRadius="3" CounterAxisAlignment="Center" Padding="11,4,11,6" utu:AutoLayout.CounterAlignment="Stretch">
+                    <Line X2="96" Width="96" />
+                    <TextBlock TextAlignment="Center" Text="12인치" Foreground="{ThemeResource Primary}" />
+                </utu:AutoLayout>
+            </utu:AutoLayout>
+            <utu:AutoLayout CornerRadius="4" CounterAxisAlignment="Start" Padding="1" utu:AutoLayout.IsIndependentLayout="True" Margin="376,94,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="80">
+                <utu:AutoLayout Background="{ThemeResource Default}" CornerRadius="3" CounterAxisAlignment="Center" Padding="11,4,11,6" utu:AutoLayout.CounterAlignment="Stretch">
+                    <Line X2="96" Width="96" />
+                    <TextBlock TextAlignment="Center" Text="13.3인치" Foreground="{ThemeResource Primary}" />
+                </utu:AutoLayout>
+            </utu:AutoLayout>
+            <utu:AutoLayout CornerRadius="4" CounterAxisAlignment="Start" Padding="1" utu:AutoLayout.IsIndependentLayout="True" Margin="464,94,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="80">
+                <utu:AutoLayout Background="{ThemeResource Default}" CornerRadius="3" CounterAxisAlignment="Center" Padding="11,4,11,6" utu:AutoLayout.CounterAlignment="Stretch">
+                    <Line X2="96" Width="96" />
+                    <TextBlock TextAlignment="Center" Text="15.6인치" Foreground="{ThemeResource Primary}" />
+                </utu:AutoLayout>
+            </utu:AutoLayout>
+            <utu:AutoLayout Background="{ThemeResource Default}" CornerRadius="4" CounterAxisAlignment="Center" Padding="12,5,12,7" utu:AutoLayout.IsIndependentLayout="True" Margin="24,142,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="132">
+                <Line X2="96" Width="96" />
+                <TextBlock TextAlignment="Center" Text="사용자 지정" Foreground="{ThemeResource Primary}" />
+            </utu:AutoLayout>
+            <utu:AutoLayout CornerRadius="4" CounterAxisAlignment="Start" Padding="1,0" utu:AutoLayout.IsIndependentLayout="True" Margin="172,142,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
+                <Rectangle RadiusX="3" RadiusY="3" Fill="{ThemeResource Default}" utu:AutoLayout.IsIndependentLayout="True" Margin="1,1,1,0" VerticalAlignment="Top" HorizontalAlignment="Stretch" Height="30" />
+                <TextBlock TextWrapping="Wrap" Text="13.2" utu:AutoLayout.IsIndependentLayout="True" Margin="12,5,73,0" VerticalAlignment="Top" HorizontalAlignment="Stretch" Foreground="{ThemeResource Primary}" />
+                <utu:AutoLayout CornerRadius="4" CounterAxisAlignment="Start" Padding="1,0" utu:AutoLayout.IsIndependentLayout="True" Margin="0,2,2,0" VerticalAlignment="Top" HorizontalAlignment="Right">
+                    <Rectangle RadiusX="3" RadiusY="3" Fill="{ThemeResource Transparent}" Stroke="{ThemeResource Transparent}" StrokeThickness="1" utu:AutoLayout.IsIndependentLayout="True" Margin="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+                    <TextBlock TextAlignment="Center" Text="" utu:AutoLayout.IsIndependentLayout="True" Margin="8,6" VerticalAlignment="Center" HorizontalAlignment="Center" Width="16" Height="16" Foreground="{ThemeResource Secondary}" Style="{StaticResource Small}" />
+                </utu:AutoLayout>
+                <utu:AutoLayout CornerRadius="4" CounterAxisAlignment="Start" Padding="1,0" utu:AutoLayout.IsIndependentLayout="True" Margin="0,2,34,0" VerticalAlignment="Top" HorizontalAlignment="Right">
+                    <Rectangle RadiusX="3" RadiusY="3" Fill="{ThemeResource Transparent}" Stroke="{ThemeResource Transparent}" StrokeThickness="1" utu:AutoLayout.IsIndependentLayout="True" Margin="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+                    <TextBlock TextAlignment="Center" Text="" utu:AutoLayout.IsIndependentLayout="True" Margin="8,6" VerticalAlignment="Center" HorizontalAlignment="Center" Width="16" Height="16" Foreground="{ThemeResource Secondary}" Style="{StaticResource Small}" />
+                </utu:AutoLayout>
+            </utu:AutoLayout>
+            <TextBlock Text="인치" utu:AutoLayout.IsIndependentLayout="True" Margin="338,148,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="{ThemeResource Secondary}" />
+            <TextBlock Text="입력한 대각선 길이를 해상도 비율로 환산합니다." utu:AutoLayout.IsIndependentLayout="True" Margin="24,188,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="{ThemeResource Secondary}" />
+            <utu:AutoLayout Background="{ThemeResource Base}" CornerRadius="6" CounterAxisAlignment="Start" utu:AutoLayout.IsIndependentLayout="True" Margin="24,224,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="520">
+                <TextBlock Text="계산된 크기 (인치)" utu:AutoLayout.IsIndependentLayout="True" Margin="20,16,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="{ThemeResource Primary}" />
+                <TextBlock Text="13.2인치" utu:AutoLayout.IsIndependentLayout="True" Margin="20,45,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="{ThemeResource Primary}" />
+                <TextBlock Text="27cm × 20cm" utu:AutoLayout.IsIndependentLayout="True" Margin="194,59,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="{ThemeResource Primary}" />
+                <TextBlock Text="물리적 비율" utu:AutoLayout.IsIndependentLayout="True" Margin="20,100,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="{ThemeResource Secondary}" />
+                <TextBlock Text="27:20  (1.35:1)" utu:AutoLayout.IsIndependentLayout="True" Margin="134,98,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="{ThemeResource Primary}" />
+                <TextBlock Text="27cm : 20cm · 레지스트리에 저장할 정수 cm로 반올림" utu:AutoLayout.IsIndependentLayout="True" Margin="20,130,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="{ThemeResource Secondary}" />
+            </utu:AutoLayout>
+        </utu:AutoLayout>
+        <utu:AutoLayout CounterAxisAlignment="Start" utu:AutoLayout.IsIndependentLayout="True" Margin="32,679,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="976">
+            <utu:AutoLayout CounterAxisAlignment="Start" utu:AutoLayout.IsIndependentLayout="True" VerticalAlignment="Top" HorizontalAlignment="Left" Width="976">
+                <Rectangle RadiusX="7" RadiusY="7" Fill="{ThemeResource Quinary}" utu:AutoLayout.IsIndependentLayout="True" Margin="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+                <Rectangle RadiusX="7" RadiusY="7" utu:AutoLayout.IsIndependentLayout="True" Margin="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+                <Rectangle RadiusX="7" RadiusY="7" utu:AutoLayout.IsIndependentLayout="True" Margin="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+            </utu:AutoLayout>
+            <TextBlock Text="디스플레이 식별 정보" utu:AutoLayout.IsIndependentLayout="True" Margin="24,15,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="{ThemeResource Primary}" />
+            <TextBlock Text="Hardware ID" utu:AutoLayout.IsIndependentLayout="True" Margin="24,48,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="{ThemeResource Secondary}" />
+            <TextBlock Text="MONITOR\\DEL42A1" utu:AutoLayout.IsIndependentLayout="True" Margin="156,48,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="{ThemeResource Primary}" />
+            <TextBlock Text="Instance ID" utu:AutoLayout.IsIndependentLayout="True" Margin="24,73,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="{ThemeResource Secondary}" />
+            <TextBlock Text="DISPLAY\\DEL42A1\\5&amp;10a58d30&amp;0&amp;UID4352" utu:AutoLayout.IsIndependentLayout="True" Margin="156,73,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="{ThemeResource Primary}" />
+            <TextBlock Text="Registry address" utu:AutoLayout.IsIndependentLayout="True" Margin="24,98,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="{ThemeResource Secondary}" />
+            <TextBlock Text="HKLM\\SYSTEM\\CurrentControlSet\\Enum\\DISPLAY\\DEL42A1\\5&amp;10a58d30&amp;0&amp;UID4352\\Device Parameters" utu:AutoLayout.IsIndependentLayout="True" Margin="156,98,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="{ThemeResource Primary}" />
+        </utu:AutoLayout>
+        <utu:AutoLayout CounterAxisAlignment="Start" utu:AutoLayout.IsIndependentLayout="True" Margin="32,831,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="976">
+            <TextBlock Text="적용 전 확인하세요" utu:AutoLayout.IsIndependentLayout="True" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="{ThemeResource Primary}" />
+            <TextBlock Text="선택한 디스플레이의 물리적 크기만 변경합니다. 해상도는 유지됩니다." utu:AutoLayout.IsIndependentLayout="True" Margin="0,26,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="{ThemeResource Secondary}" />
+            <TextBlock Text="레지스트리 쓰기에 관리자 권한이 필요할 수 있으며, 적용 후 상태는 ‘수정됨’으로 표시됩니다." utu:AutoLayout.IsIndependentLayout="True" Margin="0,65,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="{ThemeResource Secondary}" />
+            <utu:AutoLayout Background="{ThemeResource Default}" CornerRadius="4" PrimaryAxisAlignment="Center" CounterAxisAlignment="Center" Padding="12,5,12,7" utu:AutoLayout.IsIndependentLayout="True" Margin="808,9,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="168" Height="36">
+                <Line X2="96" Width="96" />
+                <TextBlock TextAlignment="Center" Text="적용" Foreground="{ThemeResource Primary}" />
+            </utu:AutoLayout>
+        </utu:AutoLayout>
+    </utu:AutoLayout>
+</Page>
