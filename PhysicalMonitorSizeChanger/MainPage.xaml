@@ -7,8 +7,429 @@
     xmlns:local="using:PhysicalMonitorSizeChanger"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
+    <Grid RowSpacing="10" Background="{ThemeResource CardBackgroundFillColorDefaultBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <ScrollViewer Grid.Row="0" Padding="36, 40, 36, 0">
+            <StackPanel
+                MaxWidth="980" 
+                Spacing="20"
+                HorizontalAlignment="Left">
+                <!--1. 상단 헤더 -->
+                <StackPanel Spacing="6">
+                    <TextBlock
+                        Text="Display Physical Size Changer"
+                        FontSize="24"
+                        FontWeight="SemiBold"/>
+                    <TextBlock
+                        Text="디스플레이의 물리적 크기를 변경합니다."
+                        Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+                </StackPanel>
 
-    <ScrollViewer Padding="32,24">
-     
-    </ScrollViewer>
+                <!-- 2. 디스플레이 선택 바 -->
+                <StackPanel Spacing="8">
+                    <StackPanel
+                        Orientation="Horizontal"
+                        Spacing="12"
+                        VerticalAlignment="Center">
+                        <TextBlock
+                            Text="감지된 디스플레이"
+                            FontWeight="SemiBold"/>
+                        <TextBlock
+                            x:Name="TextBlockDetected"
+                            Text="감지 중..."
+                            Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+                    </StackPanel>
+
+                    <Grid ColumnSpacing="12">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="130"/>
+                        </Grid.ColumnDefinitions>
+
+                        <ComboBox
+                            x:Name="MonitorCombo"
+                            Grid.Column="0"
+                            MinWidth="300"
+                            HorizontalAlignment="Stretch"
+                            DisplayMemberPath="DisplayLabel"
+                            SelectionChanged="OnMonitorChanged"/>
+
+                        <Button
+                            Grid.Column="1"
+                            HorizontalAlignment="Stretch"
+                            Content="새로고침"
+                            Click="OnRefreshClick"/>
+                    </Grid>
+                </StackPanel>
+
+                <!-- 3. 중간 좌우 카드 -->
+                <Grid ColumnSpacing="20">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="300"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- 좌측 카드 -->
+                    <Border
+                        Grid.Column="0"
+                        Padding="24"
+                        Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                        BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
+                        BorderThickness="1"
+                        CornerRadius="8">
+                        <StackPanel Spacing="16">
+                            <Grid>
+                                <TextBlock
+                                    Text="현재 디스플레이"
+                                    FontWeight="SemiBold"
+                                    VerticalAlignment="Center"/>
+                                <Border
+                                    HorizontalAlignment="Right"
+                                    Padding="10,4"
+                                    Background="{ThemeResource SubtleFillColorSecondaryBrush}"
+                                    CornerRadius="4">
+                                    <TextBlock
+                                        x:Name="TextBlockStage"
+                                        Text="기본값"
+                                        FontSize="12"
+                                        Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+                                </Border>
+                            </Grid>
+
+                            <!-- 모니터 그래픽 -->
+                            <StackPanel
+                                HorizontalAlignment="Center"
+                                Margin="0, 8, 0, 4">
+                                <Border
+                                    Width="154"
+                                    Height="94"
+                                    Background="{ThemeResource ControlStrongStrokeColorDefaultBrush}"
+                                    CornerRadius="6"
+                                    Padding="4">
+                                    <Border
+                                        Background="{ThemeResource LayerFillColorDefaultBrush}"
+                                        CornerRadius="3">
+                                        <TextBlock
+                                            x:Name="TextBlockCurrentMonitor"
+                                            Text="1"
+                                            FontSize="24"
+                                            FontWeight="SemiBold"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"/>
+                                    </Border>
+                                </Border>
+                                <Border
+                                    Width="14"
+                                    Height="10"
+                                    Background="{ThemeResource ControlStrongStrokeColorDefaultBrush}"/>
+                                <Border
+                                    Width="46"
+                                    Height="4"
+                                    CornerRadius="2"
+                                    Background="{ThemeResource ControlStrongStrokeColorDefaultBrush}"/>
+                            </StackPanel>
+
+                            <!-- 모니터 이름, 인치 -->
+                            <TextBlock
+                                x:Name="TextBoxMonitorName"
+                                Text="-"
+                                FontSize="16"
+                                FontWeight="SemiBold"/>
+                            <StackPanel Spacing="2">
+                                <TextBlock
+                                    Text="크기 (인치)"
+                                    FontSize="12"
+                                    Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+                                <StackPanel
+                                    Orientation="Horizontal"
+                                    Spacing="12"
+                                    VerticalAlignment="Bottom">
+                                    <TextBlock
+                                        x:Name="TextBoxCurrentInches"
+                                        Text="-"
+                                        FontSize="26"
+                                        FontWeight="Bold"/>
+                                    <TextBlock
+                                        x:Name="TextBoxCurrentCm"
+                                        Text="-"
+                                        Margin="0, 0, 0, 4"
+                                        Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+                                </StackPanel>
+                            </StackPanel>
+                            <MenuFlyoutSeparator/>
+
+                            <!-- 해상도 정보 -->
+                            <Grid RowSpacing="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <TextBlock
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                    Text="해상도"
+                                    Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+                                <TextBlock
+                                    x:Name="TextBlockCurrentResolution"
+                                    Grid.Row="0"
+                                    Grid.Column="1"
+                                    Text="-"
+                                    HorizontalAlignment="Right"/>
+
+                                <TextBlock
+                                    Grid.Row="1"
+                                    Grid.Column="0"
+                                    Text="상태 요약"
+                                    Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+                                <TextBlock
+                                    x:Name="TextBlockCurrentInfo"
+                                    Grid.Row="1"
+                                    Grid.Column="1"
+                                    Text="-"
+                                    HorizontalAlignment="Right"/>
+                            </Grid>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- 우측 카드 -->
+                    <Border
+                        Grid.Column="1"
+                        Padding="24"
+                        Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                        BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
+                        BorderThickness="1"
+                        CornerRadius="8">
+                        <Grid RowSpacing="16">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock
+                                Grid.Row="0"
+                                Text="적용할 모니터 크기"
+                                FontWeight="SemiBold"/>
+
+                            <!-- 프리셋 버튼 모음 -->
+                            <StackPanel Spacing="8" Grid.Row="1">
+                                <TextBlock
+                                    Text="프리셋"
+                                    FontSize="13"
+                                    Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+                                <Grid ColumnSpacing="8">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Button 
+                                        Grid.Column="0"
+                                        HorizontalAlignment="Stretch"
+                                        Content="8인치"
+                                        Width="76"
+                                        Tag="8"
+                                        Click="OnPresetClick"/>
+                                    <Button 
+                                        Grid.Column="1"
+                                        HorizontalAlignment="Stretch"
+                                        Content="11인치"
+                                        Width="76"
+                                        Tag="11"
+                                        Click="OnPresetClick"/>
+                                    <Button 
+                                        Grid.Column="2"
+                                        HorizontalAlignment="Stretch"
+                                        Content="12인치"
+                                        Width="76"
+                                        Tag="11"
+                                        Click="OnPresetClick"/>
+                                    <Button 
+                                        Grid.Column="3"
+                                        HorizontalAlignment="Stretch"
+                                        Content="13인치"
+                                        Width="76"
+                                        Tag="13"
+                                        Click="OnPresetClick"/>
+                                </Grid>
+                            </StackPanel>
+
+                            <!-- 사용자 지정 -->
+                            <StackPanel 
+                                Grid.Row="2"
+                                Orientation="Horizontal"
+                                Spacing="12" 
+                                VerticalAlignment="Center">
+                                <TextBlock 
+                                    Text="Custom"
+                                    VerticalAlignment="Center"
+                                    Width="84"/>
+                                <NumberBox
+                                    x:Name="NumberBoxTargetInches"
+                                    Width="170"
+                                    Maximum="60"
+                                    Minimum="5"
+                                    SmallChange="0.5"
+                                    SpinButtonPlacementMode="Compact"
+                                    Value="13"
+                                    ValueChanged="OnTargetInchesChanged"/>
+                                <TextBlock
+                                    Text="인치"
+                                    VerticalAlignment="Center"
+                                    Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+                            </StackPanel>
+
+                            <MenuFlyoutSeparator Grid.Row="3"/>
+                            <TextBlock
+                                Grid.Row="4"
+                                Text="환산 결과"
+                                FontSize="12"
+                                Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+                            <Border
+                                Grid.Row="5"
+                                Padding="20, 16"
+                                Background="{ThemeResource LayerFillColorAltBrush}"
+                                BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
+                                BorderThickness="1"
+                                CornerRadius="6">
+                                <StackPanel Spacing="8">
+                                    <TextBlock
+                                Text="계산된 크기 (인치)"
+                                FontSize="12"
+                                Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+                                    <StackPanel Spacing="12" Orientation="Horizontal">
+                                        <TextBlock
+                                    x:Name="TextBlockPreviewInches"
+                                    Text="13.0 인치"
+                                    FontSize="26"
+                                    FontWeight="Bold"
+                                    Foreground="{ThemeResource AccentTextFillColorPrimaryBrush}"/>
+                                        <TextBlock
+                                    x:Name="TextBlockPreviewCm"
+                                    Text="29cm x 16cm"
+                                    Margin="0, 0, 0, 4"
+                                    FontWeight="SemiBold" 
+                                    VerticalAlignment="Bottom"/>
+                                    </StackPanel>
+                                    <MenuFlyoutSeparator/>
+                                    <TextBlock
+                                Text="레지스트리에 저장하기 위해 정수 cm로 반올림된 값입니다."
+                                FontSize="12"
+                                Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+                                </StackPanel>
+                            </Border>
+                        </Grid>
+                    </Border>
+                </Grid>
+
+                <!-- 4. 하단 카드 -->
+                <Border
+                    Padding="24, 16"
+                    Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                    BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
+                    BorderThickness="1"
+                    CornerRadius="8">
+                    <StackPanel Spacing="10">
+                        <TextBlock 
+                    Text="디스플레이 식별 정보"
+                    FontWeight="SemiBold"/>
+                        <Grid RowSpacing="6" ColumnSpacing="24">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="120"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock
+                        Grid.Row="0" Grid.Column="0"
+                        Text="Hardware ID"
+                        Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+                            <TextBlock
+                        Grid.Row="0" Grid.Column="1"
+                        x:Name="TextBoxHardwareId"
+                        Text="-"
+                        IsTextSelectionEnabled="True"/>
+
+                            <TextBlock
+                        Grid.Row="1" Grid.Column="0"
+                        Text="Instance ID"
+                        Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+                            <TextBlock
+                        Grid.Row="1" Grid.Column="1"
+                        x:Name="TextBoxInstanceId"
+                        Text="-"
+                        IsTextSelectionEnabled="True"/>
+
+                            <TextBlock
+                        Grid.Row="2" Grid.Column="0"
+                        Text="Registry Address"
+                        Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+                            <TextBlock
+                        Grid.Row="2" Grid.Column="1"
+                        x:Name="TextBoxRegistryAddress"
+                        Text="-"
+                        IsTextSelectionEnabled="True"/>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+
+
+            </StackPanel>
+        </ScrollViewer>
+        <!-- 5. 버튼 및 안내 문구 -->
+        <Grid 
+            Grid.Row="1" 
+            Padding="36, 24, 36, 24"
+            Background="{ThemeResource SmokeFillColorDefaultBrush}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel 
+                Grid.Column="0" 
+                Spacing="4">
+                <TextBlock Text="적용 전 확인하세요" FontWeight="SemiBold"/>
+                <TextBlock
+                    Text="선택된 디스플레이의 설정만 변경됩니다. (관리자 권한 필요)"
+                    FontSize="12"
+                    Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+            </StackPanel>
+            <StackPanel 
+                Grid.Column="1"
+                Orientation="Horizontal"
+                Spacing="10"
+                VerticalAlignment="Center">
+                <Button
+                    x:Name="ButtonApply"
+                    Width="120"
+                    Height="36"
+                    Content="적용하기"
+                    Click="OnApplyClick"
+                    Style="{StaticResource AccentButtonStyle}"/>
+                <Button
+                    x:Name="ButtonRestore"
+                    Width="120"
+                    Height="36"
+                    Content="되돌리기"
+                    Click="OnRestoreClick"/>
+            </StackPanel>
+        </Grid>
+
+    </Grid>
 </Page>

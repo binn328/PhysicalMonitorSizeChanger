@@ -17,6 +17,7 @@ namespace PhysicalMonitorSizeChanger
             LoadMonitors();
         }
 
+        
         private DisplayInfo? SelectedMonitor => MonitorCombo.SelectedItem as DisplayInfo;
         private void LoadMonitors()
         {
@@ -29,9 +30,9 @@ namespace PhysicalMonitorSizeChanger
             }
             else
             {
-                CurrentInfoText.Text = "Monitor Not Found";
-                ApplyButton.IsEnabled = false;
-                RestoreButton.IsEnabled = false;
+                //CurrentInfoText.Text = "Monitor Not Found";
+                //ApplyButton.IsEnabled = false;
+                //RestoreButton.IsEnabled = false;
             }
         }
 
@@ -44,7 +45,7 @@ namespace PhysicalMonitorSizeChanger
         {
             if (sender is Button btn && double.TryParse(btn?.Tag.ToString(), out double inches))
             {
-                TargetInchesBox.Value = inches;
+                //TargetInchesBox.Value = inches;
             }
         }
 
@@ -59,12 +60,12 @@ namespace PhysicalMonitorSizeChanger
             if (monitor is null) return;
 
             string stateTag = monitor.IsOverridden ? "수정됨" : "기본값";
-            CurrentInfoText.Text =
-                $"현재크기: {monitor.Inches:0.0}인치 ({monitor.WidthCm}cm x {monitor.HeightCm}cm) | 상태: {stateTag}";
+            //CurrentInfoText.Text =
+            //    $"현재크기: {monitor.Inches:0.0}인치 ({monitor.WidthCm}cm x {monitor.HeightCm}cm) | 상태: {stateTag}";
 
-            double targetInches = double.IsNaN(TargetInchesBox.Value) ? 13.0 : TargetInchesBox.Value;
-            var calc = DisplayService.GetTargetSize(targetInches, monitor.WidthPx, monitor.HeightPx);
-            PreviewText.Text = $"변경될 크기 => {calc.Inches:0.0}인치";
+            //double targetInches = double.IsNaN(TargetInchesBox.Value) ? 13.0 : TargetInchesBox.Value;
+            //var calc = DisplayService.GetTargetSize(targetInches, monitor.WidthPx, monitor.HeightPx);
+            //PreviewText.Text = $"변경될 크기 => {calc.Inches:0.0}인치";
         }
 
 
